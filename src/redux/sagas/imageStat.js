@@ -15,12 +15,12 @@ function* getImageStat(action) {
         try {
             const { id } = yield element;
             yield put(loadImageStat(id));
+            yield delay(300);
             const data = yield call(fetchImageStat, id);
             const {
                 downloads: { total: dTotal },
                 views: { total: vTotal },
             } = data;
-            delay(500);
             yield put(setImageStat(id, dTotal, vTotal));
         } catch (err) {
             yield put(setErrorImageStat(err.message));

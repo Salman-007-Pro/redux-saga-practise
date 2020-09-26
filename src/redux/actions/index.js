@@ -32,10 +32,12 @@ const setImageStat = (id, downloads, views) => {
     return { type: IMAGES_STAT_SUCCESS, id, downloads, views };
 };
 
-const setErrorImageStat = error => ({
-    type: IMAGES_STAT_FAIL,
-    error,
-});
+const setErrorImageStat = error => {
+    return{
+        type: IMAGES_STAT_FAIL,
+        error,
+    }
+}
 
 export {
     loadImages,

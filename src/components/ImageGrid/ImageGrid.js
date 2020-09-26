@@ -36,7 +36,7 @@ class ImageGrid extends Component {
                                 image.height / image.width,
                             )}`}
                         >
-                            <Stats stats={imageStat[image.id]} />
+                            <Stats stats={imageStat[image.id]} error={imageStat[image.id]?.error} />
                             <img
                                 src={image.urls.small}
                                 alt={image.user.username}
